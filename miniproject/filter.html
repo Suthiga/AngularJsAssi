@@ -1,0 +1,11 @@
+<div>
+
+ <ul>
+  <li ng-repeat="item in result" class="col-sm-6">
+       <div class="col-sm-4"><img src="person.png"></div>
+    <div class="col-sm-2">Name:{{item.Name}}<br>AssociateId:{{item.AssociateId}}<br>Designation:{{item.Designation}}<br>PlaceofWork:{{item.PlaceofWork}}</div>
+    </li>
+</ul>
+<h3>Designation:</h3>
+<button ng-click="filter()"><a href="#developer">Developer</a></button>
+</div>
