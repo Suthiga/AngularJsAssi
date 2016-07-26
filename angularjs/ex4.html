@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="app4" >
+ <head>
+   <title>Angular JS</title>
+   <style>
+    [ng\:cloak],[ng-cloak],.ng-cloak{
+      display: none;
+    }
+    .mytext{
+      font-size: 24px;
+    }
+    .mycolor{
+      color: pink;
+    }
+    .myeven{
+      color: red;
+    background-color: pink;
+    }
+    .myodd{
+      color: pink;
+      background-color:  red;
+    }
+   </style>
+ </head>
+ <body>
+   <div ng-controller="mycontrol">
+     <input ng-blur="blur = blur + 1"
+     ng-click="click=click+1"
+     ng-dblclick="dblclick=dblclick+1"
+     ng-copy="copy=copy+1"
+     ng-cut="cut=cut+1"
+     ng-change="change=change+1"
+     ng-model="confirmed"
+     ng-paste="paste=paste+1"
+     ng-keydown="keydown($event)"/>
+     <h2>Blur Occurs:{{blur}}</h2>
+      <h2>Click Occurs:{{click}}</h2>
+       <h2>Double click Occurs:{{dblclick}}</h2>
+       <h2>Copy Occurs:{{copy}}</h2>
+       <h2>Paste Occurs:{{paste}}</h2>
+       <h2>Cut Occurs:{{cut}}</h2>
+       <h2>Keydown Occurs:{{keyval}}</h2>
+       <h2>Cut Occurs:{{change}}</h2>
+       <button ng-disabled="disablebutton">Button</button>
+       <input type="checkbox" ng-model="disablebutton"/>Disable Buton
+       <input type="checkbox" ng-model="daytime"/>Morning
+       <p ng-hide="!daytime">Gud mrng</p>
+       <p ng-hide="daytime">Gud eve</p>
+       <select ng-model="styling">
+         <option value="mytext">Mytext</option>
+         <option value="mycolor">Mycolor</option>
+       </select>
+       <p ng-class="styling">I love myself</p>
+       <table>
+         <tr ng-repeat="example in examples" ng-class-even="'myeven'" ng-class-odd="'myodd'">
+           <td>{{example.item}}</td>
+           <td>{{example.purchase}}</td>
+         </tr>
+       </table>
+
+
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+   <script src="ang4.js"></script>
+ </body>
+</html>

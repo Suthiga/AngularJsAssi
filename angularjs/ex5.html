@@ -1,0 +1,78 @@
+<html ng-app="app5" ng-cloak>
+<head>
+  <title>Angular Js</title>
+  <style>
+      [ng\:cloak], [ng-cloak], .ng-cloak {
+        display: none;
+      }
+      .table{
+        border: 2px solid black;
+      }
+      input.ng-dirty.ng-invalid {
+     border-color: red;
+   }
+  </style>
+</head>
+<body >
+  <div ng-controller="mycontrol">
+    <h2>Purchase Items</h2>
+    <table>
+      <thead>
+        <th>Item</th>
+        <th>Purchase</th>
+      </thead>
+      <tr ng-repeat="item in examples">
+        <td>{{item.item}}</td>
+        <td><input type="checkbox" ng-model="item.purchase"></td>
+      </tr>
+    </table>
+    <label>New item
+      <input type="text" ng-model="newitem"/>
+    </label>
+    <button ng-click="additem(newitem)">Add Item</button>
+    <h1>{{missingerror}}</h1>
+  </div>
+  <div ng-controller="myctrl">
+    <form name="myform" ng-submit="mysubmit(myinfo)">
+      <label>Name</label>
+      <input type ="text" name="name" ng-model="myinfo.name" ng-required="true" ng-minlength="3">
+      <span class="error-message" ng-show="myform.name.$dirty&& myform.name.$error.required">Must Enter a First Name</span>
+      <span class="error-message" ng-show="myform.name.$dirty && myform.name.$error.minlength">Must be a Minimum of 2 Characters</span>
+      <br><br>
+
+      <label>Age</label>
+      <input type ="number" name="age" ng-model="myinfo.age" ng-required="true" ng-maxlength="2" ng-minlength="2">
+      <span class="error-message" ng-show="myform.age.$dirty&& myform.$age.required">Must Enter age</span>
+      <span class="error-message" ng-show="myform.age.$dirty && myform.age.$error.minlength">Age must be greater than 9</span>
+      <span class="error-message" ng-show="myform.age.$dirty && myform.age.$error.maxlength">Age must be less than 100</span>
+             <br>
+
+      <label>Male</label>
+      <input type="checkbox" name="male" ng-model="myinfo.male" ng-required="true" ng-true-value="'Male'" ng-false-value="'Female'"/>
+
+      <input type="submit" value="Save" ng-disabled="myform.$invalid"/>
+      <ul>
+        <li ng-repeat = "item in ex">
+          {{ 'Users: ' + item.name + " " + item.age+ " " + item.street +
+            " " + item.male + " " + item.delivery}}
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div ng-controller="combined">
+    <label>Enter the name to be searched</label>
+    <input type="text" ng-model="name">
+    <button ng-click="getprice()">Search</button>
+    {{pricedetail}}
+  </div>
+      <div ng-controller="combined">
+    <label> Name : </label>
+      <input type="text" ng-model="name" /><br><br>
+      <label>Price : </label>
+      <input type="text" ng-model="price" /><br><br>
+      <button ng-click="addnewdata(price, name)">Add</button>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="ang5.js"></script>
+</body>
+</html>

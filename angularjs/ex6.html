@@ -1,0 +1,52 @@
+<html ng-app="app6" ng-cloak>
+<head>
+  <title>Angular Js</title>
+  <style>
+      [ng\:cloak], [ng-cloak], .ng-cloak {
+        display: none;
+      }
+  </style>
+</head>
+<body>
+  <div ng-controller="mycontrol as parent">
+    <label>Name:</label>{{parent.name}}
+    <label>Age:</label>{{parent.age}}
+    <button ng-click="parent.getdetail()">Details</button>
+  </div>
+  <div ng-controller="others as ot">
+    <label>Name:</label>{{ot.child.name}}
+    <label>Age:</label>{{ot.child.age}}
+    <button ng-click="ot.child.getdetail()">Details</button>
+    <button ng-click="ot.child.othersdata()">more Details</button><br><br>
+    <input ng-model="ot.child.color" /><br><br>
+      <span>New Bark : {{ot.child.color}}</span>
+  </div>
+  <div ng-controller="newcontrol">
+    <label> Enter Text : </label>
+      <input type="text" ng-model="name">
+      <p>Uppercase : {{name | uppercase}}</p>
+      <p>Lowercase : {{name | lowercase}}</p>
+      <ul>
+        <li ng-repeat="item in items |filter:itemname|orderBy:'-price'">{{item.name}}</li>
+      </ul>
+      <label>Number Filter</label>
+      <input type="text" ng-model="numberval"/>
+      <p>Normal{{numberval|number}}</p>
+      <p>Negative{{-numberval|number:2}}</p>
+      <p>Negative{{-numberval|number:0}}</p>
+      <p>Date{{date|date}}</p>
+      <p>Date{{date|date:"MM\dd\yyyy"}}</p>
+      <p>{{random|limitTo:10}}</p>
+      <ul>
+        <li ng-repeat="item in items |limitTo:2">{{item.name}}</li>
+      </ul>
+      <ul>
+        <li ng-repeat="item in purchases">{{item.name}} {{item.purchase| purchased }}</li>
+      <ul>
+
+  </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+      <script src="ang6.js"></script>
+        <script src="filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+var app4=angular.module('app4',[]);
+app4.controller('mycontrol',function($scope){
+  $scope.blur=0;
+  $scope.click=0;
+  $scope.dblclick=0;
+  $scope.copy=0;
+  $scope.paste=0;
+  $scope.cut=0;
+    $scope.change=0;
+  $scope.disablebutton=true;
+  $scope.keydown=function(e){
+    $scope.keyval=String.fromCharCode(e.keyCode);
+  };
+  $scope.daytime=true;
+  $scope.examples=[
+    {
+      item:"pen",
+      purchase:"false"
+    },
+    {
+      item:"pencil",
+      purchase:"false"
+    },
+    {
+      item:"scale",
+      purchase:"false"
+    },
+    {
+      item:"marker",
+      purchase:"false"
+    }
+  ];
+});

@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <div ng-controller="mycontrol">
+      <input type="text" ng-model="name">
+      <button ng-click="congrats(name)">Click</button>
+      <h2>URL:</h2>{{currURL}}<br>
+{{protocoll}}<br>
+{{host}}<br>
+{{port}}<br>
+{{time}}
+<label>Message:
+        <input type="text" ng-model="message" /></label>
+        <button ng-click="$log.log(message)">log</button>
+        <button ng-click="$log.warn(message)">warn</button>
+        <button ng-click="$log.info(message)">info</button>
+        <button ng-click="$log.error(message)">error</button>
+        <button ng-click="$log.debug(message)">debug</button>
+        <br><br>
+        <button ng-click="throwException()">Throw Exception</button>
+        <br><br>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="http:////ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.js"></script>
+  <script src="inbuild.js"></script>
+
+</body>
+</html>

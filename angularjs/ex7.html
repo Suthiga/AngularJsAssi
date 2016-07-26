@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="app7">
+  <head>
+    <title>Angular JS</title>
+    <style>
+     [ng\:cloak],.ng-cloak,[ng-cloak]{
+     display: none;
+     }
+     .myclass{
+       color:blue;
+     }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="ang7.js"></script>
+  </head>
+  <body>
+    <div ng-controller="newcontrol">
+      <ul mydirective>
+        <li id="pen">Pen</li>
+        <ul>
+          <li>Color:red</li>
+          <li>Price:20</li>
+        </ul>
+        <li id="pencil">Pencil</li>
+        <ul>
+          <li>Color:black</li>
+          <li>Price:10</li>
+        </ul>
+        <li id="scale">Scale</li>
+        <ul>
+          <li>Color:pink</li>
+          <li>Price:30</li>
+        </ul>
+      </ul>
+      <span id="mylist"></span>
+        <h2>Stock:</h2><span id="penstock"></span>
+        <span id="hasmyclass"></span>
+        <button ng-click="myclick()">Click me</button>
+        <div mynewdirective="newitems">
+        </div>
+    </div>
+
+
+  </body>
+</html>
